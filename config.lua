@@ -1,19 +1,16 @@
 --config options
 mineraltrees.tree_angle = 45 --how 'bent' the limbs and branches of all mineraltrees are. Warning: changes may be unpredictable
-mineraltrees.dist_apart = 20--how far apart two mineraltrees can be, at a minimum.
 mineraltrees.seed_dif = 675 --The difference between the world's seed and the mineraltree's seed. Good for maintaining compatibility IMPORTANT: changes as trees are registered
 mineraltrees.base_rarity = 95--How rare, out of 100, a mineraltree is. Calculated using this < math.random(1, 100)
-mineraltrees.rel_rarity = 1 --Deprecated
-mineraltrees.biome_max_count = 1 --How many mineraltrees can be in one area
 
 --tree-specific rareness options
---These options decide how many times out of the total a given tree will spawn. For example, if they were 3:3:3:2:2:1, a coal tree would spawn 3 of 14 times.
+--number is a weight multiplier
 mineraltrees.coal_rarity = 3
-mineraltrees.iron_rarity = 3
-mineraltrees.copper_rarity = 3
-mineraltrees.gold_rarity = 2
-mineraltrees.mese_rarity = 2
-mineraltrees.diamond_rarity = 1
+mineraltrees.iron_rarity = 1
+mineraltrees.copper_rarity = 1
+mineraltrees.gold_rarity = 0.5
+mineraltrees.mese_rarity = 0.3
+mineraltrees.diamond_rarity = 0.2
 
 --tree-specific enabling
 mineraltrees.enable_coal_tree = true
@@ -24,7 +21,6 @@ mineraltrees.enable_mese_tree = true
 mineraltrees.enable_diamond_tree = true
 
 --biome config options. Dictate in how many circumstances a mineraltree can spawn. More specific values make for rarer trees.
-mineraltrees.min_elevation = 20
-mineraltrees.max_elevation = 40
-mineraltrees.temp_min = 1
-mineraltrees.tem_max = .25
+mineraltrees.min_elevation = 0
+mineraltrees.max_elevation = 60
+

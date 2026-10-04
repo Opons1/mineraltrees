@@ -19,7 +19,7 @@ mineraltrees.tree_array = {}
 
 modpath = minetest.get_modpath("mineraltrees")
 --loads config options
-dofile(modpath.."/config.txt")
+dofile(modpath.."/config.lua")
 --loads mineraltrees.register_mineral_tree
 dofile(modpath.."/tree.lua")
 
@@ -69,21 +69,6 @@ for _, mineraltree_def in pairs(mineraltrees.mineraltree_defs) do
 	mineraltrees.register_mineral_tree(mineraltree_def.name, mineraltree_def.has_bloom, mineraltree_def.rarity, mineraltree_def.enabled)
 end
 
-mineraltrees.biome_def = {
-		surface = "default:dirt_with_grass",
-		avoid_nodes = mineraltrees.tree_array,
-		avoid_radius = mineraltrees.dist_apart,
-		seed_dif = mineraltrees.seed_dif,
-		rarity = mineraltrees.base_rarity,
-		max_count = mineraltrees.biome_max_count,
-		min_elevation = mineraltrees.min_elevation,
-		max_elevation = mineraltrees.max_elevation,
-		temp_min = mineraltrees.temp_min,
-		temp_max = mineraltrees.temp_max
-	}
-
-	--registers tree spawning with plants_lib
-	plantslib:register_generate_plant(mineraltrees.biome_def, mineraltrees.sapling_rarity_array)		
 
 --Bark Splitter definition--
 minetest.register_craftitem("mineraltrees:splitter", {
